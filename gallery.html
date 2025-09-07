@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <title>Our Gallery</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff0f8; /* very light pink */
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  color:#a4141c; /* dark burgundy-magenta */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
+  gap: 10px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffe0f0; /* soft pink card bg */
+  box-shadow: 0 4px 8px #e6888d; /* deep burgundy shadow */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* Collage effect */
+.gallery-item:nth-child(2) {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+.gallery-item:nth-child(5) {
+  grid-row: span 2;
+}
+.gallery-item:nth-child(7) {
+  grid-row: span 2;
+}
+
+/* Ribbon */
+.ribbon {
+  width: 100px;
+  background: #a4141c; /* dark burgundy-magenta */
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 0;
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  transform: rotate(45deg);
+  box-shadow: 0 3px 6px rgba(128,0,64,0.4);
+}
+.nav ul li a {
+  text-decoration: none;
+  color: #a4141c; /* dark burgundy-magenta */
+  padding: 20px 3px;
+  display: inline-block;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nav ul li {
+  display: inline;
+}
+
+
+  </style>
+</head>
+<body>
+    <header class="header">
+    <div class="logo">Ignite Her Future</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="help.html">How You Can Help</a></li>
+        <li><a href="meettheteam.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Our Gallery 🎀</h1>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="image 1.jpg" alt="Image 1">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo_2025-09-01_19-50-53.jpg" alt="Image 2">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo_2025-09-01_19-50-57.jpg" alt="Image 3">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo_2025-09-01_19-50-56.jpg" alt="Image 4">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo_2025-09-01_19-50-58.jpg" alt="Image 5">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo_2025-09-01_19-51-00.jpg" alt="Image 6">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo_2025-09-01_19-50-55.jpg" alt="Image 7">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo8.jpg" alt="Image 8">
+      <div class="ribbon"></div>
+    </div>
+    <div class="gallery-item">
+      <img src="photo9.jpg" alt="Image 9">
+      <div class="ribbon"></div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="work.html">Our Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <p>Email: info@igniteherfuture.org</p>
+      <p>Phone: +233 53-208-6058</p>
+    </div>
+
+    <div class="social-media">
+      <a href="https://www.instagram.com/igniteherfuture._" target="_blank" style="margin:0 15px; color:white; font-size:30px;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@igniteherfuture._" target="_blank" style="margin:0 15px; color:white; font-size:30px;">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" style="margin:0 15px; color:white; font-size:30px;">
+       <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+
+    <div class="newsletter">
+      <input type="email" placeholder="Subscribe to our newsletter" />
+      <button>Subscribe</button>
+    </div>
+  </footer>
+</body>
+</html>

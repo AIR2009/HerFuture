@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How You Can Help – Ignite Her Future</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png.jpg">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Ignite Her Future</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="work.html">Our Work</a></li>
+        <li><a href="gallery.html">Our Gallery</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="help.html" class="active">How You Can Help</a></li>
+        <li><a href="meettheteam.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="help-intro">
+    <h2>You Can Make a Difference</h2>
+    <p>Your support empowers girls to dream bigger, learn more, and lead brighter futures.</p>
+  </section>
+
+  <section class="help-options">
+    <div class="option-card1"><i class="fas fa-hands-helping fa-2x"></i>
+      <h3>Volunteer</h3>
+      <p>Join our mission by mentoring, event planning, or skill-sharing.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyHnaIdaJl4TY-Z1r2mdEFq7ZazXG79J9uMETobNzAiBgGTw/viewform?usp=header"><button>Sign Up</button></a>
+    </div>
+    <div class="option-card1"><i class="fas fa-donate fa-2x"></i>
+      <h3>Donate</h3>
+      <p>Your donations fund education, workshops, and safe spaces for girls.</p>
+      <a href="donate.html"><button>Donate Now</button></a>
+    </div>
+    <div class="option-card1"><i class="fas fa-share-alt fa-2x"></i>
+      <h3>Spread the Word</h3>
+      <p>Share our story and help raise awareness in your community.</p>
+      <button id="shareBtn">Share</button>
+
+    </div>
+  </section>
+
+  <section class="impact-quote">
+    <blockquote>
+      “Because of this program, I’m now the first girl in my family to attend university.”<br>— Amina, 17
+    </blockquote>
+  </section>
+
+  <section class="faq">
+    <h3>Frequently Asked Questions</h3>
+    <ul>
+      <li><strong>Where does my money go?</strong> 100% of donations support children-centered programs and operations.</li>
+      <li><strong>How can I help from abroad?</strong> You can donate, share, or mentor remotely!</li>
+      <li><strong>Are donations tax-deductible?</strong> Yes, we are a registered nonprofit.</li>
+    </ul>
+  </section>
+
+  <section class="cta-final">
+    <h3>Ready to Create Change?</h3>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyHnaIdaJl4TY-Z1r2mdEFq7ZazXG79J9uMETobNzAiBgGTw/viewform?usp=header"><button class="cta-button">Become a Volunteer</button></a>
+    <a href="donate.html"><button class="cta-button donate">Donate Now</button></a>
+  </section>
+
+  <!-- Share popup (HTML only) -->
+<div id="sharePopup" class="share-popup">
+  <button id="copyLink">Copy Link</button>
+  <button id="shareWhatsApp">Share on WhatsApp</button>
+  <button id="shareTwitter">Share on Twitter</button>
+  <button id="shareFacebook">Share on Facebook</button>
+  <button id="shareEmail">Share via Email</button>
+</div>
+  <script>
+    const shareBtn = document.getElementById('shareBtn');
+    const sharePopup = document.getElementById('sharePopup');
+    const shareUrl = "https://igniteherfuture.org";
+    const shareText = "Support Ignite Her Future!";
+
+    shareBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (navigator.share) {
+        // Use native share if available
+        navigator.share({
+          title: "Ignite Her Future",
+          text: shareText,
+          url: shareUrl
+        }).catch(err => console.log("Share canceled:", err));
+      } else {
+        // Fallback popup
+        sharePopup.classList.toggle('show');
+        // Position popup below button
+        const rect = shareBtn.getBoundingClientRect();
+        sharePopup.style.left = rect.left + "px";
+        sharePopup.style.top = rect.bottom + 5 + "px";
+      }
+    });
+
+    document.getElementById('copyLink').addEventListener('click', () => {
+      navigator.clipboard.writeText(shareUrl);
+      alert("Link copied to clipboard!");
+      sharePopup.classList.remove('show');
+    });
+
+    document.getElementById('shareWhatsApp').addEventListener('click', () => {
+      window.open(`https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`, "_blank");
+    });
+
+    document.getElementById('shareTwitter').addEventListener('click', () => {
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, "_blank");
+    });
+
+    document.getElementById('shareFacebook').addEventListener('click', () => {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, "_blank");
+    });
+
+    document.getElementById('shareEmail').addEventListener('click', () => {
+      window.location.href = `mailto:?subject=${encodeURIComponent("Ignite Her Future")}&body=${encodeURIComponent(shareText + " " + shareUrl)}`;
+    });
+
+    // Close popup when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!sharePopup.contains(e.target) && e.target !== shareBtn) {
+        sharePopup.classList.remove('show');
+      }
+    });
+  </script>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="work.html">Our Work</a>
+      <a href="contact.html">Contact</a>
+      <a href="help.html">Help Our Foundation</a>
+    </div>
+
+    <div class="footer-contact">
+      <p>Email: igniteherfuturengo2025@gmail.com</p>
+      <p>Phone: +233-53-208-6058</p>
+    </div>
+
+    <div class="social-media">
+      <a href="https://www.instagram.com/igniteherfuture._" target="_blank" style="margin:0 15px; color:white; font-size:30px;">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.tiktok.com/@igniteherfuture._" target="_blank" style="margin:0 15px; color:white; font-size:30px;">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" style="margin:0 15px; color:white; font-size:30px;">
+       <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+
+    <div class="newsletter">
+      <input type="email" placeholder="Subscribe to our newsletter" />
+      <button>Subscribe</button>
+    </div>
+  </footer>
+</body>
+</html>
+    
