@@ -475,15 +475,121 @@ button[type="submit"]:hover {
   background-color: #E63946;
 }
 
-/* Contact Page */
-.contact-info {
-  padding: 3rem 2rem;
-  text-align: center;
+/* Contact Section */
+.contact-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #FADADD, #FFF5E1);
 }
-.contact-info h2 {
+
+.contact-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(164, 22, 26, 0.2);
+  overflow: hidden;
+}
+
+/* Left Panel */
+.contact-left {
+  width: 35%;
+  background: #A4161A;
+  color: #ffffff;
+  padding: 40px;
+}
+
+.contact-left h3 {
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.contact-left p {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.contact-left i {
+  margin-right: 10px;
+  color: #F7C6D9;
+}
+
+.contact-socials {
+  margin-top: 30px;
+}
+
+.contact-socials a {
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.contact-socials a:hover {
+  color: #FADADD;
+}
+
+/* Right Panel */
+.contact-right {
+  width: 65%;
+  padding: 50px;
+}
+
+.contact-right h2 {
+  margin-bottom: 10px;
   color: #A4161A;
-  margin-bottom: 2rem;
 }
+
+.contact-right p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Form */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #F7C6D9;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: #E63946;
+}
+
+.contact-form button {
+  background-color: #E63946;
+  border: none;
+  padding: 12px 35px;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #c92c3b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+}
+
 .contact-icons a {
   display: inline-block;
   margin: 1rem;
@@ -582,7 +688,7 @@ button[type="submit"]:hover {
   display: block;
 }
 
-.share-popup a, 
+.share-popup a,
 .share-popup button {
   display: block;
   padding: 8px 12px;
@@ -597,7 +703,7 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
-.share-popup a:hover, 
+.share-popup a:hover,
 .share-popup button:hover {
   background: #e0e0e0;
 }
